@@ -7,26 +7,29 @@ using RibbonsColor.solution;
 using System.Diagnostics;
 using System.Drawing;
 
-int maxHoles = 100000000;
+int maxHoles = 500000000;
 Console.WriteLine("Punched out Colored Ribbons Recursive Solution");
 Console.WriteLine();
 Stopwatch timer = new();
 IGenerateRibbons ribbonGenerator = new GenerateRibbons();
-Console.WriteLine($"Ribbons Model Generate Started (with {maxHoles} holes).");
+Console.WriteLine($" Ribbons Model Generate Started (with {maxHoles} holes).");
 timer.Start();
 List<IRibbonModel> ribbonsModel = ribbonGenerator.Generate(maxHoles);
-Console.WriteLine($"Ribbons Model Generate End (with {maxHoles} holes).");
 timer.Stop();
-Console.WriteLine($"Elapsed During Generate Model { timer.Elapsed } .");
-// IDisplayContent displayContent = new DisplayContent();
-// displayContent.displayModel(ribbonsModel);
+Console.WriteLine($" Ribbons Model Generate End (with {maxHoles} holes) Elapsed { timer.Elapsed }.");
+if (maxHoles <= 10)
+{
+    IDisplayContent displayContent = new DisplayContent();
+    displayContent.displayModel(ribbonsModel);
+}
 IColorFinder colorFinder = new ColorFinder();
 timer.Start();
-Console.WriteLine($"Detect Visible Colors of Ribbons Started.");
+Console.WriteLine($" Detect Visible Colors of Ribbons Started.");
 List<Color> colors = colorFinder.FindColors(ribbonsModel, 0, maxHoles);
-Console.WriteLine($"Detect Visible Colors of Ribbons End, {colors.Count} Colors Detected.");
-// IDisplayColors displayColors = new DisplayColors();
-// displayColors.DisplayColorName(colors);
 timer.Stop();
-Console.WriteLine($"Elapsed During Detect Colors { timer.Elapsed } .");
-
+Console.WriteLine($" Detect Visible Colors of Ribbons End, {colors.Count} Colors Detected. Elapsed { timer.Elapsed }");
+if (maxHoles <= 10)
+{
+    IDisplayColors displayColors = new DisplayColors();
+    displayColors.DisplayColorName(colors);
+}

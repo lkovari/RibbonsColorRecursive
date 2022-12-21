@@ -13,7 +13,7 @@ namespace RibbonsColor.generator.ribon
     {
         public IRibbonModel Generate(Color color, int maxHoles, bool noHole)
         {
-            Dictionary<int, bool> holes = new();
+            List<byte> holes = new();
             IGenerateHoles? holeGenerator;
             IRibbonModel ribbnModel = new RibbonModel(color, holes);
             try

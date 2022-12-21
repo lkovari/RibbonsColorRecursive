@@ -14,7 +14,7 @@ namespace RibbonsColor.solution.visiblecolor
         {
             if (level >= 0)
             {
-                if (ribbons[level].HolePositions[pos])
+                if (ribbons.ElementAt<IRibbonModel>(level).HolePositions.ElementAt<byte>(pos) == 1)
                 {
                     level--;
                     return FindVisibleColor(pos, ribbons, ref level);

@@ -8,26 +8,21 @@ namespace RibbonsColor.generator.holes
 {
     public class GenerateHoles : IGenerateHoles
     {
-        private Dictionary<int, bool> holes;
-        public GenerateHoles()
+        public List<byte> Generate(int maxHoles, bool noHole)
         {
-            holes = new Dictionary<int, bool>();
-        }
-
-        public Dictionary<int, bool> Generate(int maxHoles, bool noHole)
-        {
+            List<byte> holes = new();
             var random = new Random();
             for (int ix = 0; ix < maxHoles; ix++)
             {
                 if (noHole)
                 {
-                    holes.Add(ix, false);
-                } else
+                    holes.Add(0);
+                }
+                else
                 {
-                    holes.Add(ix, random.Next(10) > 3 ? true : false);
+                    holes.Add((byte)(random.Next(10) > 3 ? 1 : 0));
                 }
             }
-            random = null;
             return holes;
         }
     }

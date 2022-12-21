@@ -9,6 +9,6 @@ namespace RibbonsColor.model
 {
     public interface IRibbonModel {
         public Color RibbonColor { get; set; }
-        public Dictionary<int, bool> HolePositions { get; set; }
+        public List<byte> HolePositions { get; set; }
     }
 }

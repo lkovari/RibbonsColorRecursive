@@ -8,6 +8,6 @@ namespace RibbonsColor.generator.holes
 {
     public interface IGenerateHoles
     {
-        public Dictionary<int, bool> Generate(int maxHoles, bool noHole);
+        public List<byte> Generate(int maxHoles, bool noHole);
     }
 }

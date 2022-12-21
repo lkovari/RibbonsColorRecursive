@@ -11,9 +11,9 @@ namespace RibbonsColor.model
     public class RibbonModel : IRibbonModel
     {
         public Color RibbonColor { get; set; }
-        public Dictionary<int, bool> HolePositions { get; set; }
+        public List<byte> HolePositions { get; set; }
 
-        public RibbonModel(Color color, Dictionary<int, bool> holes)
+        public RibbonModel(Color color, List<byte> holes)
         {
             this.RibbonColor = color;
             this.HolePositions = holes;
