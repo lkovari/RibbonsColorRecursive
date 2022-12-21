@@ -7,7 +7,7 @@ using RibbonsColor.solution;
 using System.Diagnostics;
 using System.Drawing;
 
-int maxHoles = 500000000;
+int maxHoles = 300000000;
 Console.WriteLine("Punched out Colored Ribbons Recursive Solution");
 Console.WriteLine();
 Stopwatch timer = new();
