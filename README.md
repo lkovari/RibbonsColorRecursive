@@ -1,16 +1,9 @@
 # RibbonsColorRecursive
 Punched out colored ribbons problem recursive solution
 
+(Not an exhaustive solution because if generate larger model then Out of Memory will happen, the class instantiation is very costly operation, it should consider to create another model which consume less memory and no need a lot of class instantiation)
+
 Run:
 
-Punched out Colored Ribbons Recursive Solution
+![image](https://user-images.githubusercontent.com/26471568/208955329-544612bf-d0aa-49ed-8ee3-9e63c7297fe1.png)
 
-Ribbons Model Generate Started (with 70000000 holes).
-
-Ribbons Model Generate End (with 70000000 holes).
-
-Colors Detected in Ribbon's hole 70000000 .
-
-Elapsed 00:00:31.6746320 .
-
-C:\src\C#\ribbons\RibbonsColor\RibbonsColor\bin\Debug\net6.0\RibbonsColorRecursive.exe (process 44520) exited with code 0.
