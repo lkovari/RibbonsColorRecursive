@@ -1,4 +1,4 @@
-# RibbonsColorRecursive
+# RibbonsColor with Recursive or Non Recursive find algporythm
 Punched out colored ribbons problem recursive solution
 5 ribbons with 1 billion holes.
 
