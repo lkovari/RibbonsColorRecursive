@@ -1,10 +1,16 @@
 # RibbonsColorRecursive
 Punched out colored ribbons problem recursive solution
+5 ribbons with 1 billion holes.
 
-(Not an exhaustive solution because if generate larger model then Out of Memory will happen, the class instantiation is very costly operation, it should consider to create another model which consume less memory and no need a lot of class instantiation, the recursion also costly because when call recursively itself then push the return address into the stack, and it consume more memory.)
+(Not an exhaustive solution because it is not a fast solution 1 billion randomly generated hole positions on five ribbons, but we can improve that with some assync operations. Now I using bitwise operation each bit is represent a hole position, in this case the memory consumprion is lower than if represent a hole in one byte.)
 
 Run:
+Recursive:
+![image](https://user-images.githubusercontent.com/26471568/209223720-d6fbc9e7-8f30-4c75-a3d7-d55cc48f8e7b.png)
 
-![image](https://user-images.githubusercontent.com/26471568/209001670-264a19db-9519-4b77-a36d-2c053fe8767a.png)
+Non Recursive:
+![image](https://user-images.githubusercontent.com/26471568/209224245-b693fe45-c062-426d-8de7-4f6939a04d81.png)
+
+
 
 
