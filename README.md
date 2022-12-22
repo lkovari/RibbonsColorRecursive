@@ -12,7 +12,9 @@ Non Recursive:
 ![image](https://user-images.githubusercontent.com/26471568/209224245-b693fe45-c062-426d-8de7-4f6939a04d81.png)
 
 Possible improvements:
+
 -asyncronity
+
 -optimize find to less memory consumption
 
 
