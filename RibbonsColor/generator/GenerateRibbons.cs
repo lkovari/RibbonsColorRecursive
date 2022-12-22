@@ -1,12 +1,7 @@
 ﻿using RibbonsColor.generator.ribon;
 using RibbonsColor.generator.ribon.color;
 using RibbonsColor.model;
-using System;
-using System.Collections.Generic;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace RibbonsColor.generator
 {
@@ -14,13 +9,13 @@ namespace RibbonsColor.generator
     {
         private List<IRibbonModel> ribbons = new();
 
-        public List<IRibbonModel> Generate(int maxHoles)
+        public List<IRibbonModel> Generate(long maxHoles)
         {
             Random random = new();
             
             List<Color> generatedColors = new List<Color>();
 
-            IGenerateRibbon ribbonGenerator = new GenerateRibbon();
+            IGenerateRibbon generateRibbon = new GenerateRibbon();
             
             IGenerateColor generateColor = new GenerateColor();
             
@@ -31,7 +26,7 @@ namespace RibbonsColor.generator
                     color = generateColor.Generate();
                 }
                 
-                IRibbonModel ribbonModel = ribbonGenerator.Generate(color, maxHoles, ix == 0);
+                IRibbonModel ribbonModel = generateRibbon.Generate(color, maxHoles, ix == 0);
                 ribbons.Add(ribbonModel);
             }
             return ribbons;

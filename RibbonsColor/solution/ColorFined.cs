@@ -1,40 +1,53 @@
 ﻿using RibbonsColor.model;
 using RibbonsColor.solution.visiblecolor;
-using System;
-using System.Collections.Generic;
+using RibbonsColorRecursive.solution.visiblecolor;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace RibbonsColor.solution
 {
     public class ColorFinder : IColorFinder
     {
-        private readonly List<Color> colors;
-        private VisibleColorFinder? visibleColorFinder;
+        private List<Color> colors = new();
+        private IVisibleColorFinder visibleColorFinder;
+        private IVisibleColorFinderNonRecursive visibleColorFinderNonRecursive;
 
-        public ColorFinder()
+        public List<Color> FindColors(AlgorythmKind algorythm, List<IRibbonModel> ribbons, long fromPos, long toPos)
         {
-            colors = new List<Color>();
-        }
-
-        public List<Color> FindColors(List<IRibbonModel> ribbons, int fromPos, int toPos)
-        {
-            visibleColorFinder = new VisibleColorFinder();
-            try
+            switch (algorythm)  {
+                case AlgorythmKind.RECURSIVE:
+                    {
+                        visibleColorFinder = new VisibleColorFinder();
+                        break;
+                    }
+                case AlgorythmKind.NON_RECURSIVE:
+                    {
+                        visibleColorFinderNonRecursive = new VisibleColorFinderNonRecursive();
+                        break;
+                    }
+            }
+            
+            visibleColorFinderNonRecursive = new VisibleColorFinderNonRecursive();
+            for (long pos = fromPos; pos < toPos; pos++)
             {
-                for (int pos = fromPos; pos < toPos; pos++)
+                Color foundColor;
+                switch (algorythm)
                 {
-                    int level = ribbons.Count - 1;
-                    Color foundColor = visibleColorFinder.FindVisibleColor(pos, ribbons, ref level);
-                    colors.Add(foundColor);
+                    case AlgorythmKind.RECURSIVE:
+                        {
+                            int level = ribbons.Count - 1;
+                            foundColor = visibleColorFinder.FindVisibleColor(pos, ribbons, ref level);
+                            colors.Add(foundColor);
+                            break;
+                        }
+                    case AlgorythmKind.NON_RECURSIVE:
+                        {
+                            foundColor = visibleColorFinderNonRecursive.FindVisibleColor(pos, ribbons);
+                            colors.Add(foundColor);
+                            break;
+                        }
                 }
             }
-            finally
-            {
-                visibleColorFinder = null;
-            }
+
             return colors;
         }
     }

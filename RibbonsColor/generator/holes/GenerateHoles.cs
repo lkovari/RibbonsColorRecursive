@@ -1,29 +1,31 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using RibbonsColor.model;
 
 namespace RibbonsColor.generator.holes
 {
     public class GenerateHoles : IGenerateHoles
     {
-        public List<byte> Generate(int maxHoles, bool noHole)
+        private IRibbonModel ribbonModel;
+
+        public GenerateHoles(IRibbonModel ribbon)
         {
-            List<byte> holes = new();
+            ribbonModel = ribbon;
+        }
+        public void Generate(bool noHole)
+        {
+            ribbonModel.HolePositions = new byte[ribbonModel.CalculateArraySize()];
             var random = new Random();
-            for (int ix = 0; ix < maxHoles; ix++)
+            for (int ix = 0; ix < ribbonModel.HolesCount; ix++)
             {
+                
                 if (noHole)
                 {
-                    holes.Add(0);
+                    ribbonModel.SetHoleAtPosition(ix, !noHole);
                 }
                 else
                 {
-                    holes.Add((byte)(random.Next(10) > 3 ? 1 : 0));
+                    ribbonModel.SetHoleAtPosition(ix, (bool)(random.Next(10) > 3 ? true : false));
                 }
             }
-            return holes;
         }
     }
 }

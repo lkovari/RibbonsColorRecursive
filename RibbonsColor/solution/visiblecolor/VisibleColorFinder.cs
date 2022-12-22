@@ -1,20 +1,15 @@
 ﻿using RibbonsColor.model;
-using System;
-using System.Collections.Generic;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace RibbonsColor.solution.visiblecolor
 {
     public class VisibleColorFinder : IVisibleColorFinder
     {
-        public Color FindVisibleColor(int pos, List<IRibbonModel> ribbons, ref int level)
+        public Color FindVisibleColor(long pos, List<IRibbonModel> ribbons, ref int level)
         {
             if (level >= 0)
             {
-                if (ribbons.ElementAt<IRibbonModel>(level).HolePositions.ElementAt<byte>(pos) == 1)
+                if (ribbons[level].HasHoleAtPosition(pos))
                 {
                     level--;
                     return FindVisibleColor(pos, ribbons, ref level);
