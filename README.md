@@ -13,7 +13,7 @@ Non Recursive:
 
 Possible improvements:
 
--asyncronity
+-asyncronity for example each position can be run in a separate thread.
 
 -optimize find to less memory consumption
 
