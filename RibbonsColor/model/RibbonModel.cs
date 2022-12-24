@@ -14,7 +14,7 @@ namespace RibbonsColor.model
         {
             long byteIx = CalculateByteIndexByPos(pos);
             int bitPositionalNotation = CalculateBitIndexByPos(pos);
-            byte bitMask = (byte)Math.Pow(2, bitPositionalNotation);
+            byte bitMask = (byte)(2 >> bitPositionalNotation);
 
             return (HolePositions[byteIx] & bitMask) == bitMask;
         }
@@ -23,33 +23,39 @@ namespace RibbonsColor.model
         {
             long byteIx = CalculateByteIndexByPos(pos);
             int bitPositionalNotation = CalculateBitIndexByPos(pos);
-            byte bitMask = (byte)Math.Pow(2, bitPositionalNotation);
+            byte bitMask = (byte)(2 >> bitPositionalNotation);
             if (hole)
             {
                 HolePositions[byteIx] = (byte)(HolePositions[byteIx] | bitMask);
             }
             else
             {
-                byte negateBitMask = (byte)~bitMask;
-                HolePositions[byteIx] = (byte)(HolePositions[byteIx] & negateBitMask);
+                HolePositions[byteIx] = (byte)(HolePositions[byteIx] & (byte)~bitMask);
             }
         }
 
         public long CalculateArraySize()
         {
-            long remainder = HolesCount % BYTE_SIZE;
+            // long remainder = HolesCount % BYTE_SIZE;
+            long remainder = (HolesCount & (BYTE_SIZE - 1));
             long baseArraySize = remainder == 0 ? (HolesCount / BYTE_SIZE) : (HolesCount - remainder) / BYTE_SIZE;
             return remainder > 0 ? baseArraySize + 1 : baseArraySize;
         }
 
         public long CalculateByteIndexByPos(long pos)
         {
-            return (pos - (pos % BYTE_SIZE)) / BYTE_SIZE;
+            return (pos - CalcMod(pos)) / BYTE_SIZE;
         }
 
-        public int CalculateBitIndexByPos(long pos)
+        public byte CalculateBitIndexByPos(long pos)
         {
-            return (int)(pos % BYTE_SIZE);
+            //return (int)(pos % BYTE_SIZE);
+            return CalcMod(pos);
+        }
+
+        public byte CalcMod(long pos)
+        {
+            return (byte)(pos & (BYTE_SIZE - 1));
         }
     }
 }

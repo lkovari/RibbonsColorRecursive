@@ -9,7 +9,7 @@ namespace RibbonsColorRecursive.solution.visiblecolor
         {
             int ixr = ribbons.Count - 1;
             Color foundColor = ribbons[ixr].RibbonColor;
-            while (ixr >= 0 && (ribbons[ixr].HasHoleAtPosition(pos)))
+            while (ixr > 0 && (ribbons[ixr].HasHoleAtPosition(pos)))
             {
                 ixr--;
                 foundColor = ribbons[ixr].RibbonColor;

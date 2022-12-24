@@ -4,6 +4,6 @@ namespace RibbonsColor.generator.ribon.color
 {
     public interface IGenerateColor
     {
-        public Color Generate();
+        public Color Generate(Random random);
     }
 }
