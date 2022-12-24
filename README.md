@@ -11,7 +11,9 @@ Recursive:
 ![image](https://user-images.githubusercontent.com/26471568/209438364-d7d313d7-1ef1-45c2-850b-375581c72514.png)
 
 Non Recursive:
-![image](https://user-images.githubusercontent.com/26471568/209224245-b693fe45-c062-426d-8de7-4f6939a04d81.png)
+
+![image](https://user-images.githubusercontent.com/26471568/209442083-5447db57-0948-4b6f-96f8-524ef8564f7a.png)
+
 
 Possible improvements:
 
