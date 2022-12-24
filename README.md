@@ -12,7 +12,7 @@ Recursive:
 
 Non Recursive:
 
-![image](https://user-images.githubusercontent.com/26471568/209442083-5447db57-0948-4b6f-96f8-524ef8564f7a.png)
+![image](https://user-images.githubusercontent.com/26471568/209452477-25be462d-767b-4290-95e9-4e808b794672.png)
 
 
 Possible improvements:
