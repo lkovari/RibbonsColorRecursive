@@ -16,7 +16,7 @@ namespace RibbonsColor.generator.holes
             var random = new Random();
             for (int ix = 0; ix < ribbonModel.HolesCount; ix++)
             {
-                
+
                 if (noHole)
                 {
                     ribbonModel.SetHoleAtPosition(ix, !noHole);

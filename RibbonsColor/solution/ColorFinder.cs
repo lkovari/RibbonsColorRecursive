@@ -7,26 +7,12 @@ namespace RibbonsColor.solution
 {
     public class ColorFinder : IColorFinder
     {
-        private List<Color> colors = new();
-        private IVisibleColorFinder visibleColorFinder;
-        private IVisibleColorFinderNonRecursive visibleColorFinderNonRecursive;
-
+        private IVisibleColorFinder? visibleColorFinder;
+        private IVisibleColorFinderNonRecursive? visibleColorFinderNonRecursive;
         public List<Color> FindColors(AlgorythmKind algorythm, List<IRibbonModel> ribbons, long fromPos, long toPos)
         {
-            switch (algorythm)  {
-                case AlgorythmKind.RECURSIVE:
-                    {
-                        visibleColorFinder = new VisibleColorFinder();
-                        break;
-                    }
-                case AlgorythmKind.NON_RECURSIVE:
-                    {
-                        visibleColorFinderNonRecursive = new VisibleColorFinderNonRecursive();
-                        break;
-                    }
-            }
-            
-            visibleColorFinderNonRecursive = new VisibleColorFinderNonRecursive();
+            List<Color> colors = new();
+
             for (long pos = fromPos; pos < toPos; pos++)
             {
                 Color foundColor;
@@ -34,6 +20,10 @@ namespace RibbonsColor.solution
                 {
                     case AlgorythmKind.RECURSIVE:
                         {
+                            if (visibleColorFinder == null)
+                            {
+                                visibleColorFinder = new VisibleColorFinder();
+                            }
                             int level = ribbons.Count - 1;
                             foundColor = visibleColorFinder.FindVisibleColor(pos, ribbons, ref level);
                             colors.Add(foundColor);
@@ -41,6 +31,10 @@ namespace RibbonsColor.solution
                         }
                     case AlgorythmKind.NON_RECURSIVE:
                         {
+                            if (visibleColorFinderNonRecursive == null)
+                            {
+                                visibleColorFinderNonRecursive = new VisibleColorFinderNonRecursive();
+                            }
                             foundColor = visibleColorFinderNonRecursive.FindVisibleColor(pos, ribbons);
                             colors.Add(foundColor);
                             break;
