@@ -16,8 +16,8 @@ namespace MyApp // Note: actual namespace depends on the project name.
             long beginPos = 0;
             long endPos = maxHoles;
             long posCount = endPos - beginPos;
-            AlgorythmKind algorythmKind = AlgorythmKind.NON_RECURSIVE;
-            string algorythmName = algorythmKind == AlgorythmKind.RECURSIVE ? " Recursive" : "";
+            AlgorythmKind algorythmKind = AlgorythmKind.RECURSIVE;
+            string algorythmName = algorythmKind == AlgorythmKind.RECURSIVE ? "Recursive" : "";
             Console.WriteLine($"Punched out Colored Ribbons Solution {algorythmName}");
             Console.WriteLine($" (Interested range {beginPos} - {endPos})");
             Console.WriteLine();
