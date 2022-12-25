@@ -14,7 +14,7 @@ namespace RibbonsColor.model
         {
             long byteIx = CalculateByteIndexByPos(pos);
             int bitPositionalNotation = CalculateBitIndexByPos(pos);
-            byte bitMask = (byte)(2 >> bitPositionalNotation);
+            byte bitMask = FasterPow((byte)bitPositionalNotation);
 
             return (HolePositions[byteIx] & bitMask) == bitMask;
         }
@@ -23,7 +23,7 @@ namespace RibbonsColor.model
         {
             long byteIx = CalculateByteIndexByPos(pos);
             int bitPositionalNotation = CalculateBitIndexByPos(pos);
-            byte bitMask = (byte)(2 >> bitPositionalNotation);
+            ushort bitMask = FasterPow((byte)bitPositionalNotation);
             if (hole)
             {
                 HolePositions[byteIx] = (byte)(HolePositions[byteIx] | bitMask);
@@ -36,7 +36,6 @@ namespace RibbonsColor.model
 
         public long CalculateArraySize()
         {
-            // long remainder = HolesCount % BYTE_SIZE;
             long remainder = (HolesCount & (BYTE_SIZE - 1));
             long baseArraySize = remainder == 0 ? (HolesCount / BYTE_SIZE) : (HolesCount - remainder) / BYTE_SIZE;
             return remainder > 0 ? baseArraySize + 1 : baseArraySize;
@@ -49,13 +48,22 @@ namespace RibbonsColor.model
 
         public byte CalculateBitIndexByPos(long pos)
         {
-            //return (int)(pos % BYTE_SIZE);
             return CalcMod(pos);
         }
 
         public byte CalcMod(long pos)
         {
             return (byte)(pos & (BYTE_SIZE - 1));
+        }
+
+        public byte FasterPow(byte exp)
+        {
+            byte res = 1;
+            if (exp >= 1)
+            {
+                res = (byte)(1 << exp);
+            }
+            return res;
         }
     }
 }

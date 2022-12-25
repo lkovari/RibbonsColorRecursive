@@ -15,7 +15,7 @@ namespace RibbonsColor.displaymodel
                 for (int ixh = 0; ixh < ribbons[ix].HolesCount; ixh++)
                 {
                     bool hasHole = ribbons[ix].HasHoleAtPosition(ixh);
-                    Console.Write($"{hasHole} ");
+                    Console.Write($"{ hasHole } ");
                 }
                 Console.WriteLine();
             }

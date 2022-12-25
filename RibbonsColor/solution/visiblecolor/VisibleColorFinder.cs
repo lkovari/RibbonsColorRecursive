@@ -7,7 +7,7 @@ namespace RibbonsColor.solution.visiblecolor
     {
         public Color FindVisibleColor(long pos, List<IRibbonModel> ribbons, ref int level)
         {
-            if (level >= 0)
+            if (level > 0)
             {
                 if (ribbons[level].HasHoleAtPosition(pos))
                 {

@@ -13,5 +13,6 @@ namespace RibbonsColor.model
         public void SetHoleAtPosition(long pos, bool hole);
         public long CalculateByteIndexByPos(long pos);
         public byte CalculateBitIndexByPos(long pos);
+        public byte FasterPow(byte exp);
     }
 }
