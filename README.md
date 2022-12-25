@@ -26,3 +26,4 @@ Possible improvements:
 -optimize find to less memory consumption
 
 
+STILL NOT FINISHED THE OPTIMIZATION!
