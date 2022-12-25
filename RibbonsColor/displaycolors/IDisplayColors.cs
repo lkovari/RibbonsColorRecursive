@@ -4,6 +4,6 @@ namespace RibbonsColor.displaycolors
 {
     public interface IDisplayColors
     {
-        public void DisplayColorName(List<Color> colors);
+        public void DisplayColorName(List<KnownColor> colors);
     }
 }

@@ -9,13 +9,13 @@ namespace RibbonsColor.solution
     {
         private IVisibleColorFinder? visibleColorFinder;
         private IVisibleColorFinderNonRecursive? visibleColorFinderNonRecursive;
-        public List<Color> FindColors(AlgorythmKind algorythm, List<IRibbonModel> ribbons, long fromPos, long toPos)
+        public List<KnownColor> FindColors(AlgorythmKind algorythm, List<IRibbonModel> ribbons, long fromPos, long toPos)
         {
-            List<Color> colors = new();
+            List<KnownColor> colors = new();
 
             for (long pos = fromPos; pos < toPos; pos++)
             {
-                Color foundColor;
+                KnownColor foundColor;
                 switch (algorythm)
                 {
                     case AlgorythmKind.RECURSIVE:

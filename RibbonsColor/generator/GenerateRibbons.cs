@@ -12,7 +12,7 @@ namespace RibbonsColor.generator
 
         public List<IRibbonModel> Generate(long maxHoles)
         {
-            List<Color> generatedColors = new List<Color>();
+            List<KnownColor> generatedColors = new List<KnownColor>();
 
             IGenerateRibbon generateRibbon = new GenerateRibbon();
 
@@ -21,7 +21,7 @@ namespace RibbonsColor.generator
             Random random = new();
             for (int ix = 0; ix < RIBBON_COUNT; ix++)
             {
-                Color color = generateColor.Generate(random);
+                KnownColor color = generateColor.Generate(random);
                 while (generatedColors.Contains(color))
                 {
                     color = generateColor.Generate(random);

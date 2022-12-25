@@ -4,7 +4,7 @@ namespace RibbonsColor.model
 {
     public interface IRibbonModel
     {
-        public Color RibbonColor { get; set; }
+        public KnownColor RibbonColor { get; set; }
         public byte[] HolePositions { get; set; }
         public long HolesCount { get; set; }
         public byte CalcMod(long pos);

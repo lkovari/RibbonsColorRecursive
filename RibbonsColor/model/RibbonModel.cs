@@ -4,7 +4,7 @@ namespace RibbonsColor.model
 {
     public class RibbonModel : IRibbonModel
     {
-        public Color RibbonColor { get; set; }
+        public KnownColor RibbonColor { get; set; }
         public byte[] HolePositions { get; set; }
 
         private readonly int BYTE_SIZE = 8;

@@ -5,7 +5,7 @@ namespace RibbonsColor.solution.visiblecolor
 {
     public class VisibleColorFinder : IVisibleColorFinder
     {
-        public Color FindVisibleColor(long pos, List<IRibbonModel> ribbons, ref int level)
+        public KnownColor FindVisibleColor(long pos, List<IRibbonModel> ribbons, ref int level)
         {
             if (level > 0)
             {

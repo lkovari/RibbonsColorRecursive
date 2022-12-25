@@ -4,15 +4,17 @@ namespace RibbonsColor.displaycolors
 {
     public class DisplayColors : IDisplayColors
     {
-        public void DisplayColorName(List<Color> colors)
+        KnownColor[] knownColors = (KnownColor[])Enum.GetValues(typeof(KnownColor));
+
+        public void DisplayColorName(List<KnownColor> knowColors)
         {
             Console.WriteLine();
             Console.WriteLine("Visible Colors");
-            for (int ix = 0; ix < colors.Count; ix++)
+            for (int ix = 0; ix < knowColors.Count; ix++)
             {
-                Color color = colors.ElementAt<Color>(ix);
-                string comma = (ix < colors.Count - 1) ? ", " : "";
-                string colorName = color.Name + comma;
+                KnownColor color = knowColors[ix];
+                string comma = (ix < knowColors.Count - 1) ? ", " : "";
+                string colorName = color.ToString() + comma;
                 Console.Write(colorName);
             }
             Console.WriteLine();
