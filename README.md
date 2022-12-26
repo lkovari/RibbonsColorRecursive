@@ -4,7 +4,7 @@ Description: There are five ribbons. Each ribbon's length is the same, and the c
 
 The task is, to create a program in C# that models five ribbons, based on the description above, and detects the visible colors when seeing the top ribbons' hole positions.
 
-(Not an exhaustive solution because it is not a fast solution 1 billion randomly generated hole positions on five ribbons, but we can improve that with some assync operations. Now I using bitwise operation each bit is represent a hole position, in this case the memory consumprion is lower than if represent a hole in one byte.)
+(Not an exhaustive solution because it is not too fast solution, five ribbons with 1 billion randomly generated hole positions. We can improve the performance with some assync or concurrent operations, for example one thread find the color in one position. Now I using bitwise operation, each bit is represent a hole position, so on one byte I able to represent eight hole positions. In this case the memory consumprion is lower than when we use one byte to one hole position.)
 
 Run:
 
@@ -21,7 +21,7 @@ Possible improvements:
 
 -asyncronity for example each position can be run in a separate thread.
 
--optimize find to less memory consumption
+-optimize find to less memory consumption.
 
 
 STILL NOT FINISHED THE OPTIMIZATION!
