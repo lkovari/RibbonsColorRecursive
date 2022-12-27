@@ -23,5 +23,8 @@ Possible improvements:
 
 -optimize find to less memory consumption.
 
+To Do List:
 
-STILL NOT FINISHED THE OPTIMIZATION!
+- UNIT TESTS
+
+SO THE OPTIMIZATION STILL NOT FINISHED!
