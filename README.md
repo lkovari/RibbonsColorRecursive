@@ -10,11 +10,11 @@ Run:
 
 Recursive:
 
-![image](https://user-images.githubusercontent.com/26471568/209467765-6620cc9b-f34b-4d4e-a310-7c14d189a760.png)
+![image](https://user-images.githubusercontent.com/26471568/209718525-4ba09364-0cfa-445f-8466-3303f6b8f708.png)
 
 Non Recursive:
 
-![image](https://user-images.githubusercontent.com/26471568/209466890-b49d8716-396b-4eb4-808e-f3ad4a0c4948.png)
+![image](https://user-images.githubusercontent.com/26471568/209719359-b0336636-6590-4ed0-b264-b863e7bc3c1d.png)
 
 
 Possible improvements:
@@ -23,5 +23,8 @@ Possible improvements:
 
 -optimize find to less memory consumption.
 
+To Do List:
 
-STILL NOT FINISHED THE OPTIMIZATION!
+- UNIT TESTS
+
+SO THE OPTIMIZATION STILL NOT FINISHED!
