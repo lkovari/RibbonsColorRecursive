@@ -12,10 +12,7 @@ namespace RibbonsColor.displaycolors
             Console.WriteLine("Visible Colors");
             for (int ix = 0; ix < knowColors.Count; ix++)
             {
-                KnownColor color = knowColors[ix];
-                string comma = (ix < knowColors.Count - 1) ? ", " : "";
-                string colorName = color.ToString() + comma;
-                Console.Write(colorName);
+                Console.WriteLine($" { ix } Color: { knowColors[ix] }");
             }
             Console.WriteLine();
         }

@@ -35,6 +35,7 @@ namespace MyApp // Note: actual namespace depends on the project name.
             }
             IColorFinder colorFinder = new ColorFinder();
             timer.Start();
+            Console.WriteLine();
             Console.WriteLine($" Detect Visible Colors of Ribbons Started.");
             List<KnownColor> colors = colorFinder.FindColors(algorythmKind, ribbonsModel, beginPos, endPos);
             timer.Stop();

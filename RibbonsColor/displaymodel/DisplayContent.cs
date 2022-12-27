@@ -7,14 +7,19 @@ namespace RibbonsColor.displaymodel
         public void displayModel(List<IRibbonModel> ribbons)
         {
             Console.WriteLine();
-            for (int ix = 0; ix < ribbons.Count; ix++)
+            Console.WriteLine(" Display Data");
+            Console.WriteLine();
+            byte maxColorNameLength = (byte)(ribbons.Max(item => item.RibbonColor.ToString().Length) + 2);
+            for (int ix = ribbons.Count - 1; ix >= 0; ix--)
             {
-                Console.Write($"Ribbon {ix}. ");
-                Console.WriteLine($"Color {ribbons[ix].RibbonColor.ToString()}");
-                Console.Write("Holes ");
+                Console.Write($"  Ribbon {ix}. ");
+                string colorName = ribbons[ix].RibbonColor.ToString();
+                string paddedColorName = colorName.PadRight(maxColorNameLength);
+                Console.Write($"Color: { paddedColorName } ");
+                Console.Write("Holes: ");
                 for (int ixh = 0; ixh < ribbons[ix].HolesCount; ixh++)
                 {
-                    bool hasHole = ribbons[ix].HasHoleAtPosition(ixh);
+                    byte hasHole = (byte)(ribbons[ix].HasHoleAtPosition(ixh) ? 1 : 0);
                     Console.Write($"{ hasHole } ");
                 }
                 Console.WriteLine();
