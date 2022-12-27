@@ -14,7 +14,7 @@ Recursive:
 
 Non Recursive:
 
-![image](https://user-images.githubusercontent.com/26471568/209466890-b49d8716-396b-4eb4-808e-f3ad4a0c4948.png)
+![image](https://user-images.githubusercontent.com/26471568/209719359-b0336636-6590-4ed0-b264-b863e7bc3c1d.png)
 
 
 Possible improvements:
