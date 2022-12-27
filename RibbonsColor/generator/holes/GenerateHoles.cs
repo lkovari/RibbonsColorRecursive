@@ -5,14 +5,16 @@ namespace RibbonsColor.generator.holes
     public class GenerateHoles : IGenerateHoles
     {
         private IRibbonModel ribbonModel;
-
-        public GenerateHoles(IRibbonModel ribbon)
+        private long arraySize = 0;
+        
+        public GenerateHoles(IRibbonModel ribbon, long arrSize)
         {
             ribbonModel = ribbon;
+            arraySize = arrSize;
         }
         public void Generate(bool noHole)
         {
-            ribbonModel.HolePositions = new byte[ribbonModel.CalculateArraySize()];
+            ribbonModel.HolePositions = new byte[arraySize];
             var random = new Random();
             for (int ix = 0; ix < ribbonModel.HolesCount; ix++)
             {

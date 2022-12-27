@@ -7,12 +7,18 @@ namespace RibbonsColor.model
         public KnownColor RibbonColor { get; set; }
         public byte[] HolePositions { get; set; }
 
-        private readonly int BYTE_SIZE = 8;
+        private const byte BYTE_SIZE = 8;
         public long HolesCount { get; set; }
-
+        private long previousPos = 0;
+        private long byteIx;
         public bool HasHoleAtPosition(long pos)
         {
-            long byteIx = CalculateByteIndexByPos(pos);
+
+            if (previousPos != pos)
+            {
+                previousPos = pos;
+                byteIx = CalculateByteIndexByPos(pos);
+            }
             int bitPositionalNotation = CalculateBitIndexByPos(pos);
             byte bitMask = FasterPow((byte)bitPositionalNotation);
 
@@ -21,7 +27,11 @@ namespace RibbonsColor.model
 
         public void SetHoleAtPosition(long pos, bool hole)
         {
-            long byteIx = CalculateByteIndexByPos(pos);
+            if (previousPos != pos)
+            {
+                previousPos = pos;
+                byteIx = CalculateByteIndexByPos(pos);
+            }
             int bitPositionalNotation = CalculateBitIndexByPos(pos);
             ushort bitMask = FasterPow((byte)bitPositionalNotation);
             if (hole)

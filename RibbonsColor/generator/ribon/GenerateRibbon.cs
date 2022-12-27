@@ -9,11 +9,13 @@ namespace RibbonsColor.generator.ribon
         public IRibbonModel Generate(KnownColor color, long maxHoles, bool noHole)
         {
             IGenerateHoles? holeGenerator;
-            IRibbonModel ribbonModel = new RibbonModel();
-            ribbonModel.HolesCount = maxHoles;
-            ribbonModel.RibbonColor = color;
+            IRibbonModel ribbonModel = new RibbonModel
+            {
+                HolesCount = maxHoles,
+                RibbonColor = color
+            };
 
-            holeGenerator = new GenerateHoles(ribbonModel);
+            holeGenerator = new GenerateHoles(ribbonModel, ribbonModel.CalculateArraySize());
             holeGenerator.Generate(noHole);
 
             return ribbonModel;
