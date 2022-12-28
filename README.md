@@ -1,7 +1,10 @@
 # RibbonsColor with Recursive or Non Recursive find colors algorythm
 
 Description: \
-There are five ribbons. Each ribbon's length is the same, and the color of the ribbons is unique, so no two ribbons where the color is the same. There are the same amount of hole positions on four ribbons. Whether the hole exists or not is random. One of the ribbons has no hole at all. Put the ribbon on a table that has no hole, and put on it all the other ribbons.(the order is doesn't matter) Where there is a hole on the top ribbon, you will see the color of the ribbon which is under in that case if there is no hole on that ribbon. 
+There are five ribbons. Each ribbon's length is the same, and the color of the ribbons is unique, so no two ribbons where the color is the same. There are the same amount of hole positions on the four ribbons. Whether the hole exists or not is random. One of the ribbons has no hole at all. 
+If we put to the bottom the ribbon which hasn't any holes, put the other ribbons on top of that, and view the ribbon which is on the top, we can observe different colors in the holes, depending on whether the hole exists or not.\
+for example, if the top ribbon has a hole and behind that, the ribbon has no hole at the same position we can see the ribbon color of the ribbon which is located behind the top ribbon.\
+If the same position all four ribbons have a hole, we can see the ribbon color located on the bottom.\
 
 The task is, to create a program in C# that models five ribbons, based on the description above, and detects the visible colors when seeing the top ribbons' hole positions.
 
