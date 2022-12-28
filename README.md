@@ -7,21 +7,19 @@ The task is, to create a program in C# that models five ribbons, based on the de
 
 (Not an exhaustive solution because it is not too fast solution, five ribbons with 1 billion randomly generated hole positions. We can improve the performance with some assync or concurrent operations, for example one thread find the color in one position. Now I using bitwise operation, each bit is represent a hole position, so on one byte I able to represent eight hole positions. In this case the memory consumprion is lower than when we use one byte to one hole position.)
 
-Run:
 
-Recursive:\
+Recursive Run:\
 ![image](https://user-images.githubusercontent.com/26471568/209718525-4ba09364-0cfa-445f-8466-3303f6b8f708.png)
 
-Non Recursive:
-
+Non Recursive Run:
 ![image](https://user-images.githubusercontent.com/26471568/209719359-b0336636-6590-4ed0-b264-b863e7bc3c1d.png)
 
 
-Possible improvements:\
+Possible improvements:
 - asyncronity for example each position can be run in a separate thread.\
 - optimize find to less memory consumption.
 
-To Do List:\
-- UNIT TESTS\
+To Do List:
+- UNIT TESTS
 
 SO THE OPTIMIZATION STILL NOT FINISHED!
