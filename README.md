@@ -12,7 +12,8 @@ Run:
 Recursive:\
 ![image](https://user-images.githubusercontent.com/26471568/209718525-4ba09364-0cfa-445f-8466-3303f6b8f708.png)
 
-Non Recursive:\
+Non Recursive:
+
 ![image](https://user-images.githubusercontent.com/26471568/209719359-b0336636-6590-4ed0-b264-b863e7bc3c1d.png)
 
 
