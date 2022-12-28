@@ -20,7 +20,7 @@ Non Recursive Run:\
 
 Possible improvements:
 - asyncronity for example each position can be run in a separate thread.
-- optimize find to less memory consumption.
+- optimize of the find colors, to less memory consumption.
 
 To Do List:
 - UNIT TESTS
