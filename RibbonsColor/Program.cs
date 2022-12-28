@@ -19,14 +19,14 @@ namespace MyApp // Note: actual namespace depends on the project name.
             AlgorythmKind algorythmKind = AlgorythmKind.RECURSIVE;
             string algorythmName = algorythmKind == AlgorythmKind.RECURSIVE ? "Recursive" : "";
             Console.WriteLine($"Punched out Colored Ribbons Solution {algorythmName}");
-            Console.WriteLine($" (Interested range {beginPos} - {endPos})");
+            Console.WriteLine($" (Interested range {beginPos} - {endPos:#,#)})");
             Console.WriteLine();
             Stopwatch timer = new();
             IGenerateRibbons generateRibbons = new GenerateRibbons();
             timer.Start();
             List<IRibbonModel> ribbonsModel = generateRibbons.Generate(maxHoles);
             timer.Stop();
-            Console.WriteLine($" 5 Ribbons Model Generate End (with {maxHoles} holes) Elapsed {timer.Elapsed}.");
+            Console.WriteLine($" 5 Ribbons Model Generate End (with {maxHoles:#,#} holes) Elapsed {timer.Elapsed}.");
             if (maxHoles <= 17)
             {
                 IDisplayContent displayContent = new DisplayContent();
@@ -37,7 +37,7 @@ namespace MyApp // Note: actual namespace depends on the project name.
             Console.WriteLine();
             List<KnownColor> colors = colorFinder.FindColors(algorythmKind, ribbonsModel, beginPos, endPos);
             timer.Stop();
-            Console.WriteLine($" Detect Visible Colors of Ribbons End, {colors.Count} Colors Detected. Elapsed {timer.Elapsed}");
+            Console.WriteLine($" Detect Visible Colors of Ribbons End, {colors.Count:#,#} Colors Detected. Elapsed {timer.Elapsed}");
             if (posCount <= 17)
             {
                 IDisplayColors displayColors = new DisplayColors();
