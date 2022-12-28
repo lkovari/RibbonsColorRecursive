@@ -9,7 +9,7 @@ The task is, to create a program in C# that models five ribbons, based on the de
 
 
 Recursive Run:\
-![image](https://user-images.githubusercontent.com/26471568/209718525-4ba09364-0cfa-445f-8466-3303f6b8f708.png)
+![image](https://user-images.githubusercontent.com/26471568/209814025-b28d449b-6cce-4af2-9892-ef63d317e19c.png)
 
 Non Recursive Run:\
 ![image](https://user-images.githubusercontent.com/26471568/209719359-b0336636-6590-4ed0-b264-b863e7bc3c1d.png)
