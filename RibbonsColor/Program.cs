@@ -23,7 +23,6 @@ namespace MyApp // Note: actual namespace depends on the project name.
             Console.WriteLine();
             Stopwatch timer = new();
             IGenerateRibbons generateRibbons = new GenerateRibbons();
-            Console.WriteLine($" 5 Ribbons Model Generate Started (with {maxHoles} holes).");
             timer.Start();
             List<IRibbonModel> ribbonsModel = generateRibbons.Generate(maxHoles);
             timer.Stop();
@@ -36,7 +35,6 @@ namespace MyApp // Note: actual namespace depends on the project name.
             IColorFinder colorFinder = new ColorFinder();
             timer.Start();
             Console.WriteLine();
-            Console.WriteLine($" Detect Visible Colors of Ribbons Started.");
             List<KnownColor> colors = colorFinder.FindColors(algorythmKind, ribbonsModel, beginPos, endPos);
             timer.Stop();
             Console.WriteLine($" Detect Visible Colors of Ribbons End, {colors.Count} Colors Detected. Elapsed {timer.Elapsed}");
