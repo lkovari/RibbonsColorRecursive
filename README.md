@@ -1,6 +1,7 @@
 # RibbonsColor with Recursive or Non Recursive find colors algorythm
 
-Description: There are five ribbons. Each ribbon's length is the same, and the color of the ribbons is unique, so no two ribbons where the color is the same. There are the same amount of hole positions on four ribbons. Whether the hole exists or not is random. One of the ribbons has no hole at all. Put the ribbon on a table that has no hole, and put on it all the other ribbons.(the order is doesn't matter) Where there is a hole on the top ribbon, you will see the color of the ribbon which is under in that case if there is no hole on that ribbon. 
+Description: \
+There are five ribbons. Each ribbon's length is the same, and the color of the ribbons is unique, so no two ribbons where the color is the same. There are the same amount of hole positions on four ribbons. Whether the hole exists or not is random. One of the ribbons has no hole at all. Put the ribbon on a table that has no hole, and put on it all the other ribbons.(the order is doesn't matter) Where there is a hole on the top ribbon, you will see the color of the ribbon which is under in that case if there is no hole on that ribbon. 
 
 The task is, to create a program in C# that models five ribbons, based on the description above, and detects the visible colors when seeing the top ribbons' hole positions.
 
@@ -8,23 +9,18 @@ The task is, to create a program in C# that models five ribbons, based on the de
 
 Run:
 
-Recursive:
-
+Recursive:\
 ![image](https://user-images.githubusercontent.com/26471568/209718525-4ba09364-0cfa-445f-8466-3303f6b8f708.png)
 
-Non Recursive:
-
+Non Recursive:\
 ![image](https://user-images.githubusercontent.com/26471568/209719359-b0336636-6590-4ed0-b264-b863e7bc3c1d.png)
 
 
-Possible improvements:
+Possible improvements:\
+- asyncronity for example each position can be run in a separate thread.\
+- optimize find to less memory consumption.
 
--asyncronity for example each position can be run in a separate thread.
-
--optimize find to less memory consumption.
-
-To Do List:
-
-- UNIT TESTS
+To Do List:\
+- UNIT TESTS\
 
 SO THE OPTIMIZATION STILL NOT FINISHED!

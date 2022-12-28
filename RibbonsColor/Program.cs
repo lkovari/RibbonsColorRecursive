@@ -26,7 +26,7 @@ namespace MyApp // Note: actual namespace depends on the project name.
             timer.Start();
             List<IRibbonModel> ribbonsModel = generateRibbons.Generate(maxHoles);
             timer.Stop();
-            Console.WriteLine($" 5 Ribbons Model Generate End (with {maxHoles:#,#} holes) Elapsed {timer.Elapsed}.");
+            Console.WriteLine($" 5 Ribbons Model Generated (with {maxHoles:#,#} holes) Elapsed Time is {timer.Elapsed}.");
             if (maxHoles <= 17)
             {
                 IDisplayContent displayContent = new DisplayContent();
@@ -37,7 +37,7 @@ namespace MyApp // Note: actual namespace depends on the project name.
             Console.WriteLine();
             List<KnownColor> colors = colorFinder.FindColors(algorythmKind, ribbonsModel, beginPos, endPos);
             timer.Stop();
-            Console.WriteLine($" Detect Visible Colors of Ribbons End, {colors.Count:#,#} Colors Detected. Elapsed {timer.Elapsed}");
+            Console.WriteLine($" Detected Visible Colors of Ribbons: {colors.Count:#,#} Elapsed Time is {timer.Elapsed}");
             if (posCount <= 17)
             {
                 IDisplayColors displayColors = new DisplayColors();
