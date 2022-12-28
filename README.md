@@ -12,7 +12,7 @@ Recursive Run:\
 ![image](https://user-images.githubusercontent.com/26471568/209814025-b28d449b-6cce-4af2-9892-ef63d317e19c.png)
 
 Non Recursive Run:\
-![image](https://user-images.githubusercontent.com/26471568/209719359-b0336636-6590-4ed0-b264-b863e7bc3c1d.png)
+![image](https://user-images.githubusercontent.com/26471568/209815318-7f4d3b79-fe9b-4334-af00-670e29d23640.png)
 
 
 Possible improvements:
