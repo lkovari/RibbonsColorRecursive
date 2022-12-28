@@ -23,6 +23,7 @@ Possible improvements:
 - optimize of the find colors, to less memory consumption.
 
 To Do List:
-- UNIT TESTS
+- Unit tests to reach 80% code coverage!!!
+- optimization
 
 SO THE OPTIMIZATION STILL NOT FINISHED!
