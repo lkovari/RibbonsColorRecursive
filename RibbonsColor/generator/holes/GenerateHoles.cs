@@ -12,19 +12,28 @@ namespace RibbonsColor.generator.holes
             ribbonModel = ribbon;
             arraySize = arrSize;
         }
-        public void Generate(bool noHole)
+        public void Generate(bool noHole, bool optimizedFill)
         {
             ribbonModel.HolePositions = new byte[arraySize];
             var random = new Random();
-            for (int ix = 0; ix < ribbonModel.HolesCount; ix++)
+            if (optimizedFill)
             {
-                if (noHole)
+                for (int ix = 0; ix < ribbonModel.HolePositions.Length; ix++)
                 {
-                    ribbonModel.SetHoleAtPosition(ix, !noHole);
+                    ribbonModel.HolePositions[ix] = (byte)random.Next(0xff);
                 }
-                else
+            } else
+            {
+                for (int ix = 0; ix < ribbonModel.HolesCount; ix++)
                 {
-                    ribbonModel.SetHoleAtPosition(ix, (bool)(random.Next(10) > 3 ? true : false));
+                    if (noHole)
+                    {
+                        ribbonModel.SetHoleAtPosition(ix, !noHole);
+                    }
+                    else
+                    {
+                        ribbonModel.SetHoleAtPosition(ix, (bool)(random.Next(10) > 3 ? true : false));
+                    }
                 }
             }
         }

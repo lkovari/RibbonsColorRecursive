@@ -25,7 +25,13 @@ namespace RibbonsColor.solution
                                 visibleColorFinder = new VisibleColorFinder();
                             }
                             int level = ribbons.Count - 1;
-                            foundColor = visibleColorFinder.FindVisibleColor(pos, ribbons, ref level);
+                            if (ribbons[level].HasHoleAtPosition(pos))
+                            {
+                                foundColor = visibleColorFinder.FindVisibleColor(pos, ribbons, ref level);
+                            } else
+                            {
+                                foundColor = ribbons[level].RibbonColor;
+                            }
                             colors.Add(foundColor);
                             break;
                         }
@@ -35,7 +41,13 @@ namespace RibbonsColor.solution
                             {
                                 visibleColorFinderNonRecursive = new VisibleColorFinderNonRecursive();
                             }
-                            foundColor = visibleColorFinderNonRecursive.FindVisibleColor(pos, ribbons);
+                            if (ribbons[ribbons.Count - 1].HasHoleAtPosition(pos))
+                            {
+                                foundColor = visibleColorFinderNonRecursive.FindVisibleColor(pos, ribbons);
+                            } else
+                            {
+                                foundColor = ribbons[ribbons.Count - 1].RibbonColor;
+                            }
                             colors.Add(foundColor);
                             break;
                         }

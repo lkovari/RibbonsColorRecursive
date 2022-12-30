@@ -12,7 +12,9 @@ namespace MyApp // Note: actual namespace depends on the project name.
     {
         static void Main(string[] args)
         {
-            long maxHoles = 1000000000;// 1 billion holes 
+            const byte RIBBONS_COUNT = 5;
+            const byte DISPLAY_MODEL_LIMIT = 40;
+            long maxHoles = 2000000000;// 1 billion holes 
             long beginPos = 0;
             long endPos = maxHoles;
             long posCount = endPos - beginPos;
@@ -24,10 +26,10 @@ namespace MyApp // Note: actual namespace depends on the project name.
             Stopwatch timer = new();
             IGenerateRibbons generateRibbons = new GenerateRibbons();
             timer.Start();
-            List<IRibbonModel> ribbonsModel = generateRibbons.Generate(maxHoles);
+            List<IRibbonModel> ribbonsModel = generateRibbons.Generate(maxHoles, RIBBONS_COUNT);
             timer.Stop();
-            Console.WriteLine($" 5 Ribbons Model Generated (with {maxHoles:#,#} holes) Elapsed Time is {timer.Elapsed}.");
-            if (maxHoles <= 17)
+            Console.WriteLine($" { RIBBONS_COUNT } Ribbons Model Generated (with {maxHoles:#,#} holes) Elapsed Time is {timer.Elapsed}.");
+            if (maxHoles <= DISPLAY_MODEL_LIMIT)
             {
                 IDisplayContent displayContent = new DisplayContent();
                 displayContent.displayModel(ribbonsModel);
@@ -38,7 +40,7 @@ namespace MyApp // Note: actual namespace depends on the project name.
             List<KnownColor> colors = colorFinder.FindColors(algorythmKind, ribbonsModel, beginPos, endPos);
             timer.Stop();
             Console.WriteLine($" Detected Visible Colors of Ribbons: {colors.Count:#,#} Elapsed Time is {timer.Elapsed}");
-            if (posCount <= 17)
+            if (posCount <= DISPLAY_MODEL_LIMIT)
             {
                 IDisplayColors displayColors = new DisplayColors();
                 displayColors.DisplayColorName(colors);
