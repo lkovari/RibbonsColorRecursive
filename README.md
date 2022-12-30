@@ -8,7 +8,7 @@ If the same position all four ribbons have a hole, we can see the ribbon color l
 
 The task is, to create a program in C# that models five ribbons, based on the description above, and detects the visible colors when seeing the top ribbons' hole positions.
 
-(Not an exhaustive solution because it is not too fast solution, five ribbons with 1 billion randomly generated hole positions. We can improve the performance with some assync or concurrent operations, for example one thread find the color in one position. Now I using bitwise operation, each bit is represent a hole position, so on one byte I able to represent eight hole positions. In this case the memory consumprion is lower than when we use one byte to one hole position.)
+(Not an exhaustive solution because it is not too fast solution, five ribbons with 2 billions randomly generated hole positions. We can improve the performance with some assync or concurrent operations, for example one thread find the color in one position. Now I using bitwise operation, each bit is represent a hole position, so on one byte I able to represent eight hole positions. In this case the memory consumprion is lower than when we use one byte to one hole position.)
 
 
 Recursive Run:\
