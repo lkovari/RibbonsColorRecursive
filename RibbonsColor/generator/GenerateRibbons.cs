@@ -25,6 +25,7 @@ namespace RibbonsColor.generator
                 {
                     color = generateColor.Generate(random);
                 }
+                generatedColors.Add(color);
 
                 IRibbonModel ribbonModel = generateRibbon.Generate(color, maxHoles, ix == 0);
                 ribbons.Add(ribbonModel);

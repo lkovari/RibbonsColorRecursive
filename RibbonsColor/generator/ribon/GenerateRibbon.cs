@@ -15,7 +15,7 @@ namespace RibbonsColor.generator.ribon
                 RibbonColor = color
             };
 
-            holeGenerator = new GenerateHoles(ribbonModel, ribbonModel.CalculateArraySize());
+            holeGenerator = new GenerateHoles(ribbonModel);
             holeGenerator.Generate(noHole, true);
 
             return ribbonModel;

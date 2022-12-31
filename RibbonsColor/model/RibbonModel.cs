@@ -13,7 +13,6 @@ namespace RibbonsColor.model
         private long byteIx;
         public bool HasHoleAtPosition(long pos)
         {
-
             if (previousPos != pos)
             {
                 previousPos = pos;

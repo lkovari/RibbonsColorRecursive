@@ -7,10 +7,10 @@ namespace RibbonsColor.generator.holes
         private IRibbonModel ribbonModel;
         private long arraySize = 0;
         
-        public GenerateHoles(IRibbonModel ribbon, long arrSize)
+        public GenerateHoles(IRibbonModel ribbon)
         {
             ribbonModel = ribbon;
-            arraySize = arrSize;
+            arraySize = ribbon.CalculateArraySize();
         }
         public void Generate(bool noHole, bool optimizedFill)
         {
@@ -20,7 +20,14 @@ namespace RibbonsColor.generator.holes
             {
                 for (int ix = 0; ix < ribbonModel.HolePositions.Length; ix++)
                 {
-                    ribbonModel.HolePositions[ix] = (byte)random.Next(0xff);
+                    if (noHole)
+                    {
+                        ribbonModel.HolePositions[ix] = 0x00;
+                    } else
+                    {
+                        ribbonModel.HolePositions[ix] = (byte)random.Next(0xff);
+                    }
+                    
                 }
             } else
             {
