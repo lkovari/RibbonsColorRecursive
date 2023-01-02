@@ -7,7 +7,7 @@ namespace RibbonsColor.generator.ribon.color
     {
         KnownColor[] names = (KnownColor[])Enum.GetValues(typeof(KnownColor));
 
-        public KnownColor Generate(Random random)
+        public KnownColor GenerateRibbonColor(Random random)
         {
             return names[random.Next(names.Length)];
         }

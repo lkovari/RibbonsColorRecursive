@@ -5,6 +5,6 @@ namespace RibbonsColor.generator.ribon
 {
     public interface IGenerateRibbon
     {
-        IRibbonModel Generate(KnownColor color, long maxHoles, bool noHole);
+        IRibbonModel GenerateARibbon(KnownColor color, long maxHoles, bool noHole);
     }
 }

@@ -6,7 +6,7 @@ namespace RibbonsColor.displaycolors
     {
         KnownColor[] knownColors = (KnownColor[])Enum.GetValues(typeof(KnownColor));
 
-        public void DisplayColorName(List<KnownColor> knowColors)
+        public void DisplayColorsName(List<KnownColor> knowColors)
         {
             Console.WriteLine();
             Console.WriteLine("Visible Colors");

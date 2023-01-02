@@ -4,6 +4,6 @@ namespace RibbonsColor.generator
 {
     public interface IGenerateRibbons
     {
-        public List<IRibbonModel> Generate(long maxHoles, byte ribbonsCount);
+        public List<IRibbonModel> GenerateAllRibbons(long maxHoles, byte ribbonsCount);
     }
 }

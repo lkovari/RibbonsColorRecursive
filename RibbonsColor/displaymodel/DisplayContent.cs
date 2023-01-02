@@ -4,7 +4,7 @@ namespace RibbonsColor.displaymodel
 {
     public class DisplayContent : IDisplayContent
     {
-        public void displayModel(List<IRibbonModel> ribbons)
+        public void displayModelContent(List<IRibbonModel> ribbons)
         {
             Console.WriteLine();
             Console.WriteLine(" Display Data");

@@ -12,7 +12,7 @@ namespace RibbonsColor.generator.holes
             ribbonModel = ribbon;
             arraySize = ribbon.CalculateArraySize();
         }
-        public void Generate(bool noHole, bool optimizedFill)
+        public void GenerateRibbonHoles(bool noHole, bool optimizedFill)
         {
             ribbonModel.HolePositions = new byte[arraySize];
             var random = new Random();

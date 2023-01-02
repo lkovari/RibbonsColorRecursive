@@ -26,13 +26,13 @@ namespace MyApp // Note: actual namespace depends on the project name.
             Stopwatch timer = new();
             IGenerateRibbons generateRibbons = new GenerateRibbons();
             timer.Start();
-            List<IRibbonModel> ribbonsModel = generateRibbons.Generate(maxHoles, RIBBONS_COUNT);
+            List<IRibbonModel> ribbonsModel = generateRibbons.GenerateAllRibbons(maxHoles, RIBBONS_COUNT);
             timer.Stop();
             Console.WriteLine($" { RIBBONS_COUNT } Ribbons Model Generated (with {maxHoles:#,#} holes) Elapsed Time is {timer.Elapsed}.");
             if (maxHoles <= DISPLAY_MODEL_LIMIT)
             {
                 IDisplayContent displayContent = new DisplayContent();
-                displayContent.displayModel(ribbonsModel);
+                displayContent.displayModelContent(ribbonsModel);
             }
             IColorFinder colorFinder = new ColorFinder();
             timer.Start();
@@ -43,7 +43,7 @@ namespace MyApp // Note: actual namespace depends on the project name.
             if (posCount <= DISPLAY_MODEL_LIMIT)
             {
                 IDisplayColors displayColors = new DisplayColors();
-                displayColors.DisplayColorName(colors);
+                displayColors.DisplayColorsName(colors);
             }
         }
     }

@@ -6,7 +6,7 @@ namespace RibbonsColor.generator.ribon
 {
     public class GenerateRibbon : IGenerateRibbon
     {
-        public IRibbonModel Generate(KnownColor color, long maxHoles, bool noHole)
+        public IRibbonModel GenerateARibbon(KnownColor color, long maxHoles, bool noHole)
         {
             IGenerateHoles? holeGenerator;
             IRibbonModel ribbonModel = new RibbonModel
@@ -16,7 +16,7 @@ namespace RibbonsColor.generator.ribon
             };
 
             holeGenerator = new GenerateHoles(ribbonModel);
-            holeGenerator.Generate(noHole, true);
+            holeGenerator.GenerateRibbonHoles(noHole, true);
 
             return ribbonModel;
         }

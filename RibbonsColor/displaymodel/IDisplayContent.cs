@@ -4,6 +4,6 @@ namespace RibbonsColor.displaymodel
 {
     public interface IDisplayContent
     {
-        public void displayModel(List<IRibbonModel> ribbons);
+        public void displayModelContent(List<IRibbonModel> ribbons);
     }
 }
