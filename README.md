@@ -24,7 +24,7 @@ Possible improvements:
 
 To Do List:
 - Unit tests to reach 80% code coverage!!!
-- optimization
-- improve performance, always only two ribbons loaded into memory, to processing find visible colors like as at a position, ribbon[pos| = ribbon[pos] && ribbon[pos + 1] after that processing the next row with increment pos.
+- code optimization
+- improve performance, always only two ribbons loaded into the memory, to processing find visible colors like as at a position, ribbon[pos| = ribbon[pos] && ribbon[pos + 1] after that processing the next row with increment pos.
 
 SO THE OPTIMIZATION STILL NOT FINISHED!
