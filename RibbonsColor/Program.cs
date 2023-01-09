@@ -14,7 +14,7 @@ namespace MyApp // Note: actual namespace depends on the project name.
         {
             const byte RIBBONS_COUNT = 5;
             const byte DISPLAY_MODEL_LIMIT = 40;
-            long maxHoles = 2000000000;// 1 billion holes 
+            long maxHoles = 2000000000;
             long beginPos = 0;
             long endPos = maxHoles;
             long posCount = endPos - beginPos;
